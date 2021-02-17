@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Pages/Home";
+import UnitConversion from "./components/Pages/UnitConversion";
+import AntoinesEquation from "./components/Pages/AntoinesEquation";
+import MolarChemistry from "./components/Pages/MolarChemistry";
+import Contact from "./components/Pages/Contact";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route path="/Home" component={Home}/>
+        <Route path="/Unit_Conversion" component={UnitConversion}/>
+        <Route path="/Antoines_Equation" component={AntoinesEquation}/>
+        <Route path="/Molar_Chemistry" component={MolarChemistry}/>
+        <Route path="/Contact" component={Contact}/>
+      </Switch>
+    </Router>
+    </>
   );
 }
 
