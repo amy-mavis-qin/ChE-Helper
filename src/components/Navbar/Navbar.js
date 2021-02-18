@@ -3,11 +3,11 @@ import { findRenderedComponentWithType } from 'react-dom/test-utils';
 import { MenuItems } from "./MenuItems";
 import "./Navbar.css"
 import { Button } from "../Button"
-class Navbar extends Component {
-    state = { active: false }
 
+class Navbar extends Component {    
+    state = { active: false }
     handleClick = () => {
-        this.setState({ active: !this.state.active })
+        this.setState({ active: !this.state.active})
     }
     render(){
         return(
@@ -20,10 +20,10 @@ class Navbar extends Component {
                     {MenuItems.map((item, index)=>{
                         return (
                             <li key = {index}>
-                                <a className={item.cName} href={item.url}>
+                                <a className={item.cName} href={item.url} style={item.url==window.location.pathname ? { borderBottom: "2px solid #ae9dcf" } : { textDecoration: "none" }}>
                                     {item.title}
-                                </a>
-                                
+                               </a>
+    
                             </li>
                         )
                     })}

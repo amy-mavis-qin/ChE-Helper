@@ -35,6 +35,10 @@
     padding: 0.5rem, 1rem;
 }
 
+.nav-links .current{
+    font-weight:bold;
+}
+
 .nav-links:hover{
     font-weight:bold;
 }
@@ -61,7 +65,7 @@
         flex-direction: column;
         text-align: left;
         width: 10%;
-        height: 500px;
+        height: 400px;
         position: absolute;
         top: 50px;
         left: -100%;

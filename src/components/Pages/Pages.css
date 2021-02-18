@@ -10,7 +10,7 @@
 .definition-left{
     text-align: center;
     padding: 10px;
-    border-right:2px solid #333;
+    border-right:3px solid #333;
     margin-left: 12.5rem;
     max-width: 200px;
     min-width: 200px;
@@ -35,7 +35,7 @@
 .equation-left{
     text-align: center;
     padding: 10px;
-    border-right:2px solid #333;
+    border-right:3px solid #333;
     margin-left: 12.5rem;
     max-width: 200px;
     min-width: 200px;
@@ -60,7 +60,7 @@
 .calculator-left{
     text-align: center;
     padding: 10px;
-    border-right:2px solid #333;
+    border-right:3px solid #333;
     margin-left: 12.5rem;
     max-width: 200px;
     min-width: 200px;
@@ -70,4 +70,54 @@
     text-align: left;
     padding: 10px; 
     min-width: 1000px;
+}
+
+.variable-input{
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid rgba(0,0,0,1);
+    min-width: 250px;
+    outline: none;
+    color: rgba(0,0,0,1);
+    font-size: 1.2rem;
+}
+.variable-input:focus{
+    border-bottom: 3px solid #ae9dcf;
+}
+
+.constant-selection{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 0px;
+    margin-top: 15px;
+}
+
+.custom-input{
+    max-width: 180px;
+    text-align: center;
+}
+
+.single-input{
+    display: block;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,1);
+    border-bottom-style:dashed;
+    max-width: 180px;
+    padding-top: 20px;
+    padding-left: 5px;
+    outline: none;
+    color: rgba(0,0,0,1);
+    font-size: 1.2rem;
+    
+}
+.single-input:focus{
+    border-bottom: 2px solid #ae9dcf;
+    border-bottom-style:dashed;
+}
+.select-input{
+    min-width: 800px;
+}
+.antoines-constants{
+    margin: 5px;
 }
