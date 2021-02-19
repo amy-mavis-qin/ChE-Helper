@@ -1,4 +1,12 @@
-.definition{
+.homepage-banner{
+    width:85%;
+    height:auto;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-container{
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 0px;
@@ -7,7 +15,7 @@
     align-items: left;
 }
 
-.definition-left{
+.container-left{
     text-align: center;
     padding: 10px;
     border-right:3px solid #333;
@@ -16,60 +24,11 @@
     min-width: 200px;
 }
 
-.calculation-right{
+.container-right{
     text-align: left;
     padding: 10px;
-    width: 1000px;
-}
-
-.equation{
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 0px;
-    width: 77vw;
+    width: 1050px;
     font-size: 1.2rem;
-    align-items: left;
-    margin-top: 10px;
-}
-
-.equation-left{
-    text-align: center;
-    padding: 10px;
-    border-right:3px solid #333;
-    margin-left: 12.5rem;
-    max-width: 200px;
-    min-width: 200px;
-}
-
-.equation-right{
-    text-align: left;
-    padding: 10px; 
-    min-width: 1000px;
-}
-
-.calculator{
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 0px;
-    width: 77vw;
-    font-size: 1.2rem;
-    align-items: left;
-    margin-top: 10px;
-}
-
-.calculator-left{
-    text-align: center;
-    padding: 10px;
-    border-right:3px solid #333;
-    margin-left: 12.5rem;
-    max-width: 200px;
-    min-width: 200px;
-}
-
-.calculator-right{
-    text-align: left;
-    padding: 10px; 
-    min-width: 1000px;
 }
 
 .variable-input{
@@ -95,14 +54,13 @@
 
 .custom-input{
     max-width: 180px;
-    text-align: center;
+    text-align: left;
 }
 
 .single-input{
     display: block;
     border: none;
     border-bottom: 1px solid rgba(0,0,0,1);
-    border-bottom-style:dashed;
     max-width: 180px;
     padding-top: 20px;
     padding-left: 5px;
@@ -113,11 +71,158 @@
 }
 .single-input:focus{
     border-bottom: 2px solid #ae9dcf;
-    border-bottom-style:dashed;
 }
 .select-input{
     min-width: 800px;
 }
 .antoines-constants{
     margin: 5px;
+}
+
+.compound{
+    width: 250px;
+    font-size: 1.2rem;
+}
+
+a:link{
+    color: black;
+    text-decoration: none;
+}
+a:visited{
+    color: black;
+}
+a:hover{
+    border-bottom: 3px solid #ae9dcf;
+}
+a:active{
+    color: #ae9dcf;
+}
+
+.equation{
+    width: 200px;
+    height: auto;
+}
+
+.contact-form{
+    width: 500px;
+}
+
+#name{
+    width: 140px;
+    border:none;
+    border-bottom: 1px solid rgba(0,0,0,1);
+    margin-right: 10px;
+}
+#name:focus,
+#email:focus,
+#message:focus
+{
+    outline:none;
+    border-bottom: 2px solid #ae9dcf;
+}
+#email{
+    width: 350px;
+    border:none;
+    border-bottom: 1px solid rgba(0,0,0,1);
+
+}
+#message{
+    width: 500px;
+    height: 100px;
+    border:none;
+    border-bottom: 1px solid rgba(0,0,0,1);
+}
+.select-search {
+    width: 300px;
+    position: relative;
+    
+}
+.select-search *,
+.select-search *::after,
+.select-search *::before {
+    box-sizing: 300px;
+}
+
+.select-search__value {
+    position: relative;
+    z-index: 1;
+}
+
+.select-search__value::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: calc(50% - 9px);
+    right: 19px;
+    width: 11px;
+    height: 11px;
+}
+
+.select-search__input {
+    display: block;
+    height: 30px;
+    width: 100%;
+    padding: 0 16px;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    text-align: left;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.select-search__input:not([readonly]):focus {
+    cursor: initial;
+}
+
+.select-search__options {
+    list-style: none;
+}
+
+
+.select-search__option,
+.select-search__not-found {
+    display: block;
+    height: 36px;
+    width: 100%;
+    padding: 0 16px;
+    background: #fff;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.select-search__option.is-selected {
+    background: #ae9dcf;
+    color: #fff;
+}
+
+.select-search__option.is-highlighted,
+.select-search__option:not(.is-selected):hover {
+    background: #e4d6ff;
+}
+
+.select-search__option.is-highlighted.is-selected,
+.select-search__option.is-selected:hover {
+    background: #e5d9ff;
+}
+
+.select-search:not(.is-loading):not(.select-search--multiple) .select-search__value::after {
+    transform: rotate(45deg);
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    pointer-events: none;
+}
+
+.select-search__select{
+    height: 500px;
+    overflow: scroll;
+}
+
+.report-problem{
+    margin-left: 35vw;
+    margin-right: 35vw;
+    margin-top: 50px;
 }

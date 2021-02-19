@@ -22,7 +22,7 @@ function variableInput() {
 };
 
 function unitConvert(input,outputUnit){
-    var inputValue, inputUnit;
+    var inputValue, inputUnit, convertedObj;
     if(!typeof input === "object"){
         inputValue = Object.values(variableInput(input))[0][0];
         inputUnit = Object.values(variableInput(input))[0][1];

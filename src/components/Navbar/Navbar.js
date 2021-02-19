@@ -3,6 +3,7 @@ import { findRenderedComponentWithType } from 'react-dom/test-utils';
 import { MenuItems } from "./MenuItems";
 import "./Navbar.css"
 import { Button } from "../Button"
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {    
     state = { active: false }
@@ -28,7 +29,9 @@ class Navbar extends Component {
                         )
                     })}
                 </ul>
-                <Button>Sign Up</Button>
+                <Link to="/Problem_Report">
+                <Button>Report a Problem</Button>
+                </Link>
             </nav>
         )
     }

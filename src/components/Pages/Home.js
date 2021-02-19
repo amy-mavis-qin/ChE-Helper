@@ -1,11 +1,11 @@
 import React from 'react';
- 
-const home = () => {
+
+const Home = () => {
     return (
         <>
-        <div>home</div>
+        <img className='homepage-banner' src="/images/home_page.png" alt="homepage"/>
     </>
     );
 }
  
-export default home;
+export default Home;

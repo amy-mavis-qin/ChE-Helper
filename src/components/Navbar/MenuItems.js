@@ -5,13 +5,13 @@ export const MenuItems = [
         cName: 'nav-links'
     },
     {
-        title: 'Unit Conversion',
-        url: '/Unit_Conversion',
+        title: 'Antoine\'s Equation',
+        url: '/Antoines_Equation',
         cName: 'nav-links'
     },
     {
-        title: 'Antoine\'s Equation',
-        url: '/Antoines_Equation',
+        title: 'Unit Conversion',
+        url: '/Unit_Conversion',
         cName: 'nav-links'
     },
     {
@@ -20,13 +20,13 @@ export const MenuItems = [
         cName: 'nav-links'
     },
     {
-        title: 'Contact Information',
+        title: 'Contact Me',
         url: '/Contact',
         cName: 'nav-links'
     },
     {
-        title: 'Sign Up',
-        url: '#',
+        title: 'Report',
+        url: '/Problem_Report',
         cName: 'nav-links-mobile'
     }
 ]

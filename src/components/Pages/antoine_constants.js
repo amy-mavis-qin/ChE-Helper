@@ -46,7 +46,7 @@ const antoine_constants=[
     {name: 'Styrene', value:[6.92409,1420,206]},
     {name: 'Toluene', value:[6.95334,1343.943,219.377]},
     {name: 'Water', value:[7.94917,1657.462,227.02]},
-    {name: 'o_Xylene', value:[6.99893,1474.68,213.69]},
+    {name: 'o_Xylene', value:[6.99893,1474.68,213.69]}
 ];
 
 exports.antoine_constants = antoine_constants;
