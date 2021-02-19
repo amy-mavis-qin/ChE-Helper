@@ -4,8 +4,8 @@ In Progress:
 - [ ] Antoine's Equation
 
 Completed: 
-- [ ] Page Routing
-- [ ] Contact Me (Set up with EmailJS)
+- [X] Page Routing
+- [X] Contact Me page, Report Issues page (Set up with EmailJS)
 
 To Be Completed:
 - [ ] Molar Conversion
