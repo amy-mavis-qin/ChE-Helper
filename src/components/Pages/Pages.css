@@ -42,6 +42,7 @@
     color: rgba(0,0,0,1);
     font-size: 1.2rem;
 }
+
 .variable-input:focus{
     border-bottom: 3px solid #ae9dcf;
 }
@@ -229,5 +230,26 @@ a:active{
 
 .submit-button{
     font-size: 1.2rem;
-    margin-top: 10px;
+    margin: 10px;
+}
+
+
+.unit-input{
+    border:none;
+    width: 250px;
+    border-bottom: 2px solid rgba(0,0,0,1);
+    outline: none;
+    font-size: 1.2rem;
+}
+.unit-variable-input{
+    border:none;
+    width: 250px;
+    border-bottom: 2px solid rgba(0,0,0,1);
+    outline: none;
+    font-size: 1.2rem;
+}
+
+.unit-input:focus,
+.unit-variable-input:focus{
+    border-bottom: 3px solid #ae9dcf;
 }
