@@ -3,11 +3,11 @@
 # Features
 In Progress:
 - [ ] Unit Conversion
-- [ ] Antoine's Equation
 
 Completed: 
 - [X] Page Routing 02/15
 - [X] Contact Me page, Report Issues page (Set up with EmailJS) 02/17
+- [x] Antoine's Equation 02/20
 
 To Be Completed:
 - [ ] Molar Conversion
