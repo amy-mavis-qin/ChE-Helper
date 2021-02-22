@@ -1,5 +1,5 @@
 .homepage-banner{
-    width:40%;
+    width:750px;
     height:auto;
     display:block;
     margin-left: auto;
@@ -251,5 +251,5 @@ a:active{
 
 .unit-input:focus,
 .unit-variable-input:focus{
-    border-bottom: 3px solid #ae9dcf;
+    border-bottom: 2px solid #ae9dcf;
 }

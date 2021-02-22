@@ -7,6 +7,7 @@ import AntoinesEquation from "./components/Pages/AntoinesEquation";
 import MolarChemistry from "./components/Pages/MolarChemistry";
 import Contact from "./components/Pages/Contact";
 import ProblemReport from "./components/Pages/ProblemReport";
+import Footer from './components/footer'
 
 
 function App() {
@@ -14,18 +15,21 @@ function App() {
     <>
     <Router>
       <Navbar />
-      <Switch>
-        <Route path="/Home" component={Home}/>
-        <Route path="/Unit_Conversion" component={UnitConversion}/>
-        <Route path="/Antoines_Equation" component={AntoinesEquation}/>
-        <Route path="/Molar_Chemistry" component={MolarChemistry}/>
-        <Route path="/Contact" component={Contact}/>
-        <Route path="/Problem_Report" component={ProblemReport}/>
-      </Switch>
-      <Route exact path="/">
-        <Redirect to="/Home" />
-    </Route>
+        <Switch>
+          <Route path="/Home" component={Home}/>
+          <Route path="/Unit_Conversion" component={UnitConversion}/>
+          <Route path="/Antoines_Equation" component={AntoinesEquation}/>
+          <Route path="/Molar_Chemistry" component={MolarChemistry}/>
+          <Route path="/Contact" component={Contact}/>
+          <Route path="/Problem_Report" component={ProblemReport}/>
+        </Switch>
+        <Route exact path="/">
+          <Redirect to="/Home" />
+      </Route>
     </Router>
+    <div>
+    <Footer />
+    </div>
     </>
   );
 }

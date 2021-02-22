@@ -1,0 +1,25 @@
+.footer{
+    background-color: #ae9dcf;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+a.image-credits{
+    color: white;
+    margin-top: 10px;
+    margin-left: 25px;
+    float: left;
+}
+a.image-credits:hover{
+    cursor: pointer;
+    font-style: italic;
+}
+.copyright{
+    margin-top: 10px;
+    float: left; 
+}

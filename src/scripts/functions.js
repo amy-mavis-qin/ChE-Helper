@@ -30,6 +30,8 @@ function variableInput() {
 function unitConvert(input,outputUnit){
     try{
         var inputValue, inputUnit;
+        outputUnit = outputUnit.toLowerCase();
+        input = input.replace(/\s/g,"");
         input = Object.values(variableInput(input))
         inputValue = input[0][0];
         inputUnit = input[0][1];
@@ -51,6 +53,8 @@ function unitConvert(input,outputUnit){
 
 function tempConvert(input,outputUnit){
     try{
+        input = input.replace(/\s/g,"");
+        outputUnit = outputUnit.toLowerCase();
         var inputValue, inputUnit, convertedValue;
         if(typeof input === "string"){
             inputValue = parseFloat((input.match(/\d+/))[0], 10);
@@ -72,7 +76,7 @@ function tempConvert(input,outputUnit){
         } else if (inputUnit == 'k' && outputUnit == 'f'){
             convertedValue = (inputValue * (9/5)) - 459.67
         };
-        return ("The temperature is " + convertedValue + outputUnit)
+        return ("The temperature is " + convertedValue + " " + outputUnit)
     } catch (e) {
         if(e instanceof TypeError){
             alert("Invalid Input")

@@ -64,7 +64,7 @@ class UnitConversion extends Component{
                         Supported Conversion: Length, Area, Volume, Mass, Density, Force, Pressure, Energy, Power, Time
                         <div className='unit-conversion'>
                         <br />
-                            <input className='unit-variable-input' placeholder="Input Value (Ex. 1min)" onChange={e => {
+                            <input className='unit-variable-input' placeholder="Input Value (Ex. 1 min)" onChange={e => {
                                 this.setState({unitVariableInput: e.target.value}, () =>{
                                     if(this.checkIfUnitReady()){
                                         this.setState({unitDisabled:false})
@@ -93,7 +93,7 @@ class UnitConversion extends Component{
                     </div>
                     <div className="container-right">
                     <div className='temp-conversion'>
-                        <input className='unit-variable-input' placeholder="Input Value (Ex. 30C)" onChange={e => {
+                        <input className='unit-variable-input' placeholder="Input Value (Ex. 30 C)" onChange={e => {
                                 this.setState({tempInput: e.target.value}, () => {
                                     if(this.checkIfTempReady()){
                                         this.setState({tempDisabled:false})
