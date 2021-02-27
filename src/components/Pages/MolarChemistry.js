@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SelectSearch from 'react-select-search';
 import { elements } from '../../definitions/element_mass_properties.js'
-import { calculateMoles, calculateMass, calculateMolarMass } from '../../scripts/molar_calculations.js';
+import { calculateMoles, calculateMass, calculateMolarMass, IUPACMolarMass } from '../../scripts/molar_calculations.js';
 import './Pages.css'
 
 class MolarChemistry extends Component{
@@ -13,36 +13,54 @@ class MolarChemistry extends Component{
             mass:"",
             element:"",
             calculatedDisabled:true,
+            elementDisabled:true,
             result:"",
+            resultMolarMass:"",
         }
         this.handleCalculate=this.handleCalculate.bind(this)
         this.handleInputChange=this.handleInputChange.bind(this)
         this.checkIfReady=this.checkIfReady.bind(this)
+        this.checkIfElementReady=this.checkIfElementReady.bind(this)
+        this.handleFormula=this.handleFormula.bind(this)
     }
     handleInputChange = (param, e) => {
         this.setState({ [param]: e.target.value })
         if(this.checkIfReady()){
             this.setState({calculatedDisabled:false})
+        } else if (this.checkIfElementReady()){
+            this.setState({elementDisabled:false})
         }
     }     
     checkIfReady = () => {
-        if((this.state.a !== "A" && this.state.b !== "B" && this.state.c !== "C") || this.state.selectedConstant !== ""){
+        if((this.state.mass !== "" && this.state.molarMass !== "")||(this.state.mole !== "" && this.state.molarMass !== "") || (this.state.mole !== "" && this.state.mass !=="")){
             return true;
         } else {
             return false;
         }
     }
+
+    checkIfElementReady = () => {
+        if(this.state.element !== ""){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     handleCalculate = () => {
-        if (this.state.mass !== "" && this.state.molarmass !== "" && this.state.mole !== ""){
+        if (this.state.mass !== "" && this.state.molarMass !== "" && this.state.mole !== ""){
             this.setState({result:"Too many inputs!"})
         } else if (this.state.mole !== "" && this.state.molarMass !== ""){
            console.log(this.state.molarMass, this.state.mole)
             this.setState({result:calculateMass(this.state.molarMass, this.state.mole)})
         } else if (this.state.mole !== "" && this.state.mass !=="") {
          this.setState({result:calculateMolarMass(this.state.mole, this.state.mass)})
-        } else if (this.state.mass !== "" && this.state.molarmass !== ""){
+        } else if (this.state.mass !== "" && this.state.molarMass !== ""){
          this.setState({result:calculateMoles(this.state.molarMass, this.state.mass)})
         }
+    }
+    handleFormula = () => {
+        this.setState({resultMolarMass:IUPACMolarMass(this.state.element)})
     }
 
     render() {
@@ -57,20 +75,46 @@ class MolarChemistry extends Component{
                             <div className='custom-input'>
                                 <p className='antoines-constants'>Input Molar Quantities</p>
                                 <input className='single-input' placeholder="Moles" 
-                                    onChange={this.handleInputChange.bind(this, "mole")}/>
+                                    onChange={e => {
+                                        this.setState({mole: e.target.value}, () => {
+                                            if(this.checkIfReady()){
+                                                this.setState({calculatedDisabled:false})
+                                            }
+                                        })
+                                    }}/>
                                 <input className='single-input' placeholder="Molar Mass (g/mol)"
-                                    onChange={this.handleInputChange.bind(this, "molarMass")}/>
+                                    onChange={e => {
+                                        this.setState({molarMass: e.target.value}, () => {
+                                            if(this.checkIfReady()){
+                                                this.setState({calculatedDisabled:false})
+                                            }
+                                        })
+                                    }}/>
                                 <input className='single-input' placeholder="Mass (g)"
-                                    onChange={this.handleInputChange.bind(this, "mass")}/>
+                                    onChange={e => {
+                                        this.setState({mass: e.target.value}, () => {
+                                            if(this.checkIfReady()){
+                                                this.setState({calculatedDisabled:false})
+                                            }
+                                        })
+                                    }}/>
                             </div>
                             <div className="molar-mass-calculation">
                             <p className='antoines-constants'>Molar Mass Calculator</p>
                                 <input className='single-input' placeholder="Ex.(NaOH)" 
-                                    onChange={this.handleInputChange.bind(this, "element")}/>
+                                    onChange={e => {
+                                        this.setState({element: e.target.value}, () => {
+                                            if(this.checkIfElementReady()){
+                                                this.setState({elementDisabled:false})
+                                            }
+                                        })
+                                    }}/>
+                                <button className="submit-button" onClick={this.handleFormula} disabled={this.state.elementDisabled}>Calculate</button>
+                                {this.state.resultMolarMass}
                             </div>
                             <button className="submit-button" onClick={this.handleCalculate} disabled={this.state.calculatedDisabled}>Calculate</button>
+                            {this.state.result}
                         </div>
-                        {this.state.result}
                     </div>
                 </div>
             </div>

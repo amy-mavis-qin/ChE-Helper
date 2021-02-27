@@ -1,7 +1,10 @@
 const elements=[
   {
-    "value": 1.0079407538967635,
-    "name": "Hydrogen"
+    "symbol": "H",
+    "monoisotopicMass": 1.007825032071,
+    "mass": 1.0079407538967635,
+    "name": "Hydrogen",
+    "atomicNumber": 1,
   },
   {
     "symbol": "He",
@@ -2448,4 +2451,5 @@ const elements=[
     ]
   }
 ]
-  
+
+exports.elements = elements;

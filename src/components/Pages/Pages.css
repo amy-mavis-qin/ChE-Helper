@@ -231,6 +231,7 @@ a:active{
 .submit-button{
     font-size: 1.2rem;
     margin: 10px;
+    width: 200px;
 }
 
 
