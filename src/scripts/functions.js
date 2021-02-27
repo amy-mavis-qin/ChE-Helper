@@ -41,7 +41,10 @@ function unitConvert(input,outputUnit){
             var properties = Object.entries(units)[i][1]
             if (properties[inputUnit] && properties[outputUnit]){
                 var convertedValue = inputValue* (properties[outputUnit]/properties[inputUnit]);
-                return("The converted value is "+ convertedValue+" "+outputUnit);
+                // Validate Script
+                if (inputValue === (convertedValue * properties[inputUnit]/properties[outputUnit])) {
+                    return("The converted value is "+ convertedValue+" "+outputUnit);
+                }
             };
         };
     } catch (e) {
