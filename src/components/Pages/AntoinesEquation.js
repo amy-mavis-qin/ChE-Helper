@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import SelectSearch from 'react-select-search';
-import { antoine_constants } from './antoine_constants.js'
+import { antoine_constants } from '../../definitions/antoine_constants.js'
 import { antoineCalculations } from "../../scripts/pressure_calculations.js"
+import './Pages.css'
 
 class AntoinesEquation extends Component{
     constructor(props){

@@ -1,5 +1,4 @@
 const func = require('./functions');
-const { antoine_constants } = require('../definitions/antoine_constants.js');
 
 function antoineCalculations(molecule, input) {
     var result = [];
@@ -8,10 +7,6 @@ function antoineCalculations(molecule, input) {
         a = molecule[0];
         b = molecule[1];
         c = molecule[2];
-    } else {
-        a = antoine_constants[molecule][1];
-        b = antoine_constants[molecule][2];
-        c = antoine_constants[molecule][3];
     }
     input = func.variableInput(input)
     if(input.pressure && input.pressure[1] !== 'mmhg') {

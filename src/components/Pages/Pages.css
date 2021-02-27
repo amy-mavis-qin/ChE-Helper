@@ -253,3 +253,8 @@ a:active{
 .unit-variable-input:focus{
     border-bottom: 2px solid #ae9dcf;
 }
+
+.molar-mass-calculation{
+    width:1000px;
+    margin-left: 100px;
+}
