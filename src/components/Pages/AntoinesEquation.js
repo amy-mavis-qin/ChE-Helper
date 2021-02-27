@@ -28,7 +28,6 @@ class AntoinesEquation extends Component{
         }
     }     
     checkIfReady = () => {
-        console.log("check if ready",this.state)
         if((this.state.a !== "A" && this.state.b !== "B" && this.state.c !== "C") || this.state.selectedConstant !== ""){
             return true;
         } else {
@@ -105,7 +104,7 @@ class AntoinesEquation extends Component{
                             ?<p className="dynamic-equation">The vapor pressure is {this.state.result} at {this.state.variableInput}</p>
                             :this.state.result[1]=="c" && this.state.result !== ""
                             ?<p className="dynamic-equation">The temperature is {this.state.result} at {this.state.variableInput}</p>
-                            :console.log("Awaiting Input")
+                            :console.log("")
                             }
                         </div>
                     </div>

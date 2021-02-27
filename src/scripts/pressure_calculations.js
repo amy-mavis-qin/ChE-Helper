@@ -15,8 +15,8 @@ function antoineCalculations(molecule, input) {
     }
     input = func.variableInput(input)
     if(input.pressure && input.pressure[1] !== 'mmhg') {
-        Pvap = func.unitConvert(input.pressure,"mmhg");
-        T = b /( a - Math.log10(Pvap.convertedValue)) - c;
+        Pvap = func.unitConvert(input.pressure[0]+input.pressure[1],"mmhg");
+        T = b /( a - Math.log10(Pvap)) - c;
         if(Pvap === Math.round(Math.pow(10, (a - (b / (T + c)))))){
             return([T, 'c']);
         }

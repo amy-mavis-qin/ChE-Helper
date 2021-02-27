@@ -45,7 +45,6 @@ class UnitConversion extends Component{
     }
     handleConvertUnit = () => {
         this.setState({resultUnit:unitConvert(this.state.unitVariableInput, this.state.unitVariable)})
-        console.log(unitConvert(this.state.unitVariableInput, this.state.unitVariable))
     }
     handleConvertTemp = () => {
         this.setState({resultTemp:tempConvert(this.state.tempInput, this.state.tempInputUnit)})
@@ -81,7 +80,7 @@ class UnitConversion extends Component{
                             <button className="submit-button" onClick={this.handleConvertUnit} disabled={this.state.unitDisabled}>Calculate</button>
                         </div>
                         <div className="answer">
-                            {this.state.resultUnit}
+                            {this.state.resultUnit}{this.state.unitVariable}
                         </div>
                     </div>
                 </div>

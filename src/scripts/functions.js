@@ -43,7 +43,7 @@ function unitConvert(input,outputUnit){
                 var convertedValue = inputValue* (properties[outputUnit]/properties[inputUnit]);
                 // Validate Script
                 if (inputValue === (convertedValue * properties[inputUnit]/properties[outputUnit])) {
-                    return("The converted value is "+ convertedValue+" "+outputUnit);
+                    return(convertedValue);
                 }
             };
         };
