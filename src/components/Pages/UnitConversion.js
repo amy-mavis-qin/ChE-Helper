@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import SelectSearch from 'react-select-search';
-import { antoine_constants } from './antoine_constants.js'
 import { unitConvert, tempConvert } from "../../scripts/functions.js"
 
 class UnitConversion extends Component{
