@@ -1,40 +1,37 @@
 import React, { Component } from 'react';
-import { findRenderedComponentWithType } from 'react-dom/test-utils';
-import { MenuItems } from "./MenuItems";
-import "./Navbar.css"
-import { Button } from "../Button"
-import { Link } from "react-router-dom";
+import {Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap' 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Navbar.css';
 
-class Navbar extends Component {    
+class Navigationbar extends Component {    
     state = { active: false }
     handleClick = () => {
         this.setState({ active: !this.state.active})
     }
     render(){
         return(
-            <nav className="NavbarItems">
-                <h1 className="navbar-logo">ChE Helper<i className="fab fa-react"></i></h1>
-                <div className="menu-icon" onClick={this.handleClick}>
-                    <i className={this.state.active ? 'fas fa-times' : 'fas fa-bars'}></i>
-                </div>
-                <ul className={this.state.active ? 'nav-menu active' : 'nav-menu'}>
-                    {MenuItems.map((item, index)=>{
-                        return (
-                            <li key = {index}>
-                                <a className={item.cName} href={item.url} style={item.url==window.location.pathname ? { borderBottom: "2px solid #ae9dcf" } : { textDecoration: "none" }}>
-                                    {item.title}
-                               </a>
-    
-                            </li>
-                        )
-                    })}
-                </ul>
-                <Link to="/Problem_Report">
-                <Button>Report a Problem</Button>
-                </Link>
+            <nav className="navbar">
+                <Navbar bg="light" expand="lg">
+                <Navbar.Text>ChE Helper</Navbar.Text>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="mr-auto">
+                    <NavDropdown title="General Calculations" id="basic-nav-dropdown">
+                        <NavDropdown.Item href="/Antoines_Equation">Antoine's Equation</NavDropdown.Item>
+                        <NavDropdown.Item href="/Molar_Chemistry">Molar Chemistry</NavDropdown.Item>
+                        <NavDropdown.Item href="/Unit_Conversion">Unit Conversion</NavDropdown.Item>
+                    </NavDropdown>
+                    <NavDropdown title="Thermodynamics" id="basic-nav-dropdown">
+                        <NavDropdown.Item href="/FirstLaw">First Law</NavDropdown.Item>
+                        <NavDropdown.Item href="/SecondLaw">Second Law</NavDropdown.Item>
+                        <NavDropdown.Item href="/Unit_Conversion">Unit Conversion</NavDropdown.Item>
+                    </NavDropdown>
+                    </Nav>
+                </Navbar.Collapse>
+                </Navbar>
             </nav>
         )
     }
 }
 
-export default Navbar
+export default Navigationbar

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import SelectSearch from 'react-select-search';
-import { elements } from '../../definitions/element_mass_properties.js'
-import { calculateMoles, calculateMass, calculateMolarMass, IUPACMolarMass } from '../../scripts/molar_calculations.js';
-import './Pages.css'
+import { elements } from '../../../definitions/element_mass_properties.js'
+import { calculateMoles, calculateMass, calculateMolarMass, IUPACMolarMass } from '../../../scripts/molar_calculations.js';
+import '..//Pages.css'
 
 class MolarChemistry extends Component{
     constructor(props){

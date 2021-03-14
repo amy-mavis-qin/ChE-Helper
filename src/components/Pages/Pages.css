@@ -13,15 +13,16 @@
     width: 77vw;
     font-size: 1.2rem;
     align-items: left;
+    position: relative;
 }
 
 .container-left{
-    text-align: center;
+    text-align: right;
     padding: 10px;
     border-right:3px solid #333;
-    margin-left: 12.5rem;
-    max-width: 200px;
-    min-width: 200px;
+    margin-left: 4vw;
+    max-width: 20vw;
+    min-width: 20vw;
 }
 
 .container-right{
@@ -91,9 +92,6 @@ a:link{
 }
 a:visited{
     color: black;
-}
-a:hover{
-    border-bottom: 3px solid #ae9dcf;
 }
 a:active{
     color: #ae9dcf;
@@ -258,4 +256,79 @@ a:active{
 .molar-mass-calculation{
     width:1000px;
     margin-left: 100px;
+}
+
+.container-right-row{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 0px;
+    text-align: left;
+    width: 1000px;
+}
+
+.container-r1{
+    width: 230px;
+}
+
+.checkboxes {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+/* Hide the browser's default checkbox */
+.checkboxes input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+height: 0;
+width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 25px;
+width: 25px;
+background-color: #eee;
+border: 1px solid black;
+}
+
+/* On mouse-over, add a grey background color */
+.checkboxes:hover {
+font-weight:bold; 
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+
+/* Show the checkmark when checked */
+.checkboxes input:checked ~ .checkmark:after {
+display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkboxes .checkmark:after {
+left: 7px;
+top: 3px;
+width: 8px;
+height: 15px;
+border: solid black;
+border-width: 0 2px 2px 0;
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
 }
