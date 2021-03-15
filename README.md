@@ -6,8 +6,6 @@
 
 ## Features
 
-### Start Date: 02/15/2021
-
 Completed: 
 - [X] Page Routing 02/15
 - [X] Contact Me page, Report Issues page (Set up with EmailJS) 02/17
