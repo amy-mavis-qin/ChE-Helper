@@ -260,15 +260,20 @@ a:active{
 
 .container-right-row{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
     grid-gap: 0px;
     text-align: left;
     width: 1000px;
 }
 
 .container-r1{
-    width: 230px;
+    width: 500px;
 }
+.container-r2{
+    width: 30px;
+    margin-left:0px;
+}
+
 
 .checkboxes {
     display: block;
